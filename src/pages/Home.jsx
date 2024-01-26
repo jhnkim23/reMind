@@ -5,8 +5,7 @@ function Home() {
     let t_file, a_file;
 
     function handleClick(e) {
-      e.preventDefault();
-      let input = e.target.id;
+      console.log(e.target.id)
     }
 
     const addAudio = (e) => {
@@ -27,12 +26,12 @@ function Home() {
           <div id="submitWrapper">
             <div id="transcript">
                 <input id="t_input" type='file' onChange={addAudio} />
-                <Button name="transcript file" onClick={e => handleClick(e)}/>
+                <Button id="t" name="transcript file" onClick={handleClick}/>
             </div>
 
             <div id="audio">
                 <input id="a_input" type='file' onChange={addTranscript} />
-                <Button name="audio file" onClick={e => handleClick(e)}/>
+                <Button id="a" name="audio file" onClick={handleClick}/>
             </div>
           </div>
         </div>

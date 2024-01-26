@@ -1,7 +1,7 @@
 
-function Button({name, onClick}) {
+function Button({id, name, onClick}) {
     return (
-        <button onClick={onClick}> Submit {name}</button>
+        <button id={id} onClick={onClick}> Submit {name}</button>
     )
 }
 
