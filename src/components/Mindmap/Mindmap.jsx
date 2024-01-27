@@ -14,6 +14,9 @@ import 'src/components/Mindmap/Mindmap.css';
 const onNodeClick = (event, node) => console.log('click node', node);
 
 function Mindmap({nodes, edges, setNodes, setEdges}) {
+    const [popup, setPopup] = useState(true);
+    const showPopup = () => setPopup(!popup);
+
     const onNodesChange = useCallback(
         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
         [],
@@ -26,19 +29,22 @@ function Mindmap({nodes, edges, setNodes, setEdges}) {
     const [captureElementClick, setCaptureElementClick] = useState(true);
 
     return (
-        <div style={{ width: '100vw', height: '100vh' }}>
-        <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            onNodeClick={captureElementClick ? onNodeClick : undefined}
-            fitView
-        >
-            <Controls />
-            <MiniMap />
-            <Background variant="dots" gap={12} size={1} />
-        </ReactFlow>
+        <div style={{ width: '100vw', height: '100vh', position: 'relative'}}>
+            <div id='node-wrapper' style={{position: 'absolute'}}>
+                <NodePopup popup={popup} setPopup={setPopup}/>
+            </div>
+            <ReactFlow
+                nodes={nodes}
+                edges={edges}
+                onNodesChange={onNodesChange}
+                onEdgesChange={onEdgesChange}
+                onNodeClick={captureElementClick ? onNodeClick : undefined}
+                fitView
+            >
+                <Controls />
+                <MiniMap />
+                <Background variant="dots" gap={12} size={1} />
+            </ReactFlow>
         </div>
     );
 }
