@@ -6,6 +6,8 @@ import ReactFlow, {
     applyNodeChanges,
     applyEdgeChanges,
   } from 'reactflow';
+import NodePopup from 'src/components/NodePopup/NodePopup';
+
 import 'reactflow/dist/style.css';
 import 'src/components/Mindmap/Mindmap.css';
 
