@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from "src/components/Button";
-import Mindmap from "src/components/Mindmap";
+import Button from "src/components/Button/Button";
+import Mindmap from "src/components/Mindmap/Mindmap";
 
 function Home() {
     let t_file, a_file;

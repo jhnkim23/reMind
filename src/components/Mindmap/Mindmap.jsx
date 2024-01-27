@@ -7,6 +7,7 @@ import ReactFlow, {
     applyEdgeChanges,
   } from 'reactflow';
 import 'reactflow/dist/style.css';
+import 'src/components/Mindmap/Mindmap.css';
 
 const onNodeClick = (event, node) => console.log('click node', node);
 
