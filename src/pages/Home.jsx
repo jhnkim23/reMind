@@ -1,11 +1,25 @@
+import React, { useState } from 'react';
 import Button from "src/components/Button";
 import Mindmap from "src/components/Mindmap";
 
 function Home() {
     let t_file, a_file;
+    const [nodes, setNodes] = useState([]);
+    const [edges, setEdges] = useState([]);
 
     function handleClick(e) {
       console.log(e.target.id)
+      setNodes([{
+        id: '1',
+        data: { label: 'Hello' },
+        position: { x: 0, y: 0 },
+      },
+      {
+        id: '2',
+        data: { label: 'World' },
+        position: { x: 100, y: 100 },
+      },]);
+      setEdges([{ id: '1-2', source: '1', target: '2'},]);
     }
 
     const addAudio = (e) => {
@@ -37,7 +51,7 @@ function Home() {
         </div>
 
         <div id="mindmap">
-          <Mindmap/>
+          <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges}/>
         </div>
       </>
     );
