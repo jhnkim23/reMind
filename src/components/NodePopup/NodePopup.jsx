@@ -1,10 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import styled from "styled-components";
 import 'src/components/NodePopup/NodePopup.css'
 
-//left: ${(props) => props.popup === true ? "0" : "-100%"};
 
-function NodePopup() {
+function NodePopup({popup, setPopup}) {
     return (
         <>
             <p>Hello</p>

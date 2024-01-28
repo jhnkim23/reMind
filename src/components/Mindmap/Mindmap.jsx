@@ -31,22 +31,24 @@ function Mindmap({nodes, edges, setNodes, setEdges}) {
     const [captureElementClick, setCaptureElementClick] = useState(true);
 
     return (
-        <div style={{ width: '100vw', height: '100vh', position: 'relative'}}>
-            <div id='node-wrapper' style={{position: 'absolute', left: popup ? "0" : "-100%"}}>
-                <NodePopup/>
+        <div style={{position: 'relative'}}>
+            <div id='node-wrapper' style={{right: popup ? '0' : '-100%'}}>
+                <NodePopup popup={popup} setPopup={setPopup}/>
             </div>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onNodeClick={captureElementClick ? onNodeClick : undefined}
-                fitView
-            >
-                <Controls />
-                <MiniMap />
-                <Background variant="dots" gap={12} size={1} />
-            </ReactFlow>
+            <div id='mindmap-wrapper' style={{opacity: popup ? '.5' : '1'}}>
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    onNodeClick={captureElementClick ? onNodeClick : undefined}
+                    fitView
+                >
+                    <Controls />
+                    <MiniMap />
+                    <Background variant="dots" gap={12} size={1} />
+                </ReactFlow>
+            </div>
         </div>
     );
 }
