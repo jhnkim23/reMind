@@ -11,12 +11,16 @@ import NodePopup from 'src/components/NodePopup/NodePopup';
 import 'reactflow/dist/style.css';
 import 'src/components/Mindmap/Mindmap.css';
 
-function Mindmap({nodes, edges, setNodes, setEdges}) {
+function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
     const [popup, setPopup] = useState(false);
+    const [nodeID, setNodeID] = useState("");
+    const [quotes, setQuotes] = useState([]);
+    const [summary, setSummary] = useState("");
 
     const handleNodeClick = (e, node) => {
         e.preventDefault();
         console.log('click node', node);
+        setNodeID(node.id);
         setPopup(!popup);
     };
 
@@ -41,9 +45,9 @@ function Mindmap({nodes, edges, setNodes, setEdges}) {
     return (
         <div style={{position: 'relative'}}>
             <div id='node-wrapper' style={{right: popup ? '0' : '-100%'}}>
-                <NodePopup popup={popup} setPopup={setPopup}/>
+                <NodePopup popup={popup} setPopup={setPopup} nodeID={nodeID} quotes={quotes} summary={summary}/>
             </div>
-            <div id='mindmap-wrapper' style={{opacity: popup ? '.5' : '1'}}>
+            <div id='mindmap-wrapper' style={{opacity: popup ? '.4' : '1'}}>
                 <ReactFlow
                     nodes={nodes}
                     edges={edges}

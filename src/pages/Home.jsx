@@ -6,6 +6,7 @@ function Home() {
     let t_file, a_file;
     const [nodes, setNodes] = useState([]);
     const [edges, setEdges] = useState([]);
+    const [infoDict, setInfoDict] = useState({});
 
     function handleClick(e) {
       console.log(e.target.id)
@@ -51,7 +52,7 @@ function Home() {
         </div>
 
         <div id="mindmap">
-          <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges}/>
+          <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges} infoDict={infoDict}/>
         </div>
       </>
     );
