@@ -11,7 +11,10 @@ with open('abc.json', 'r') as file:
 # make sure algo adds things things to the array in the React flow format
 def add_node_and_edges(node, parent=None):
     # Add the node to the nodes array
-    nodes.append({"id" : node["title"], "data" : {"label": node["title"]}, "position": {}})
+    if parent == None:
+        nodes.append({"id" : node["title"], "type" : "input", "data" : {"label": node["title"]}, "position": {}})
+    else:
+        nodes.append({"id" : node["title"], "data" : {"label": node["title"]}, "position": {}})
     
     if "quotes" in node:
         quotes[node["title"]] = (node["summary"], node["quotes"])
