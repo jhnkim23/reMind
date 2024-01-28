@@ -4,7 +4,6 @@
     width: 35%;
     height: 100%;
     display: flex;
-    justify-content: center;
     top: 0;
     transition: 350ms;
     z-index: 10;

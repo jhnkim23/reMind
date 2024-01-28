@@ -1,11 +1,19 @@
 import React, { useState, useCallback } from 'react';
+import * as AiIcons from "react-icons/ai";
 import 'src/components/NodePopup/NodePopup.css'
 
 
 function NodePopup({popup, setPopup}) {
+    function handleClick(e) {
+        e.preventDefault();
+        setPopup(!popup);
+    }
+
     return (
         <>
-            <p>Hello</p>
+            <AiIcons.AiOutlineClose
+                onClick={handleClick}
+            />
         </>
     );
 }

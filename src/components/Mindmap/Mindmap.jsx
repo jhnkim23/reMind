@@ -14,10 +14,18 @@ import 'src/components/Mindmap/Mindmap.css';
 function Mindmap({nodes, edges, setNodes, setEdges}) {
     const [popup, setPopup] = useState(false);
 
-    const onNodeClick = (event, node) => {
+    const handleNodeClick = (e, node) => {
+        e.preventDefault();
         console.log('click node', node);
         setPopup(!popup);
     };
+
+    const handlePopupExit = (e) => {
+        e.preventDefault();
+        if (popup === true) {
+            setPopup(!popup);
+        }
+    }
 
     const onNodesChange = useCallback(
         (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
@@ -41,7 +49,8 @@ function Mindmap({nodes, edges, setNodes, setEdges}) {
                     edges={edges}
                     onNodesChange={onNodesChange}
                     onEdgesChange={onEdgesChange}
-                    onNodeClick={captureElementClick ? onNodeClick : undefined}
+                    onNodeClick={captureElementClick ? handleNodeClick : undefined}
+                    onClick={handlePopupExit}
                     fitView
                 >
                     <Controls />
