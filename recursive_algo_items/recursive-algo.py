@@ -3,6 +3,7 @@ import json
 
 nodes = []
 edges = []
+quotes = {}
 
 with open('abc.json', 'r') as file:
     data = json.load(file)
@@ -11,6 +12,9 @@ with open('abc.json', 'r') as file:
 def add_node_and_edges(node, parent=None):
     # Add the node to the nodes array
     nodes.append({"id" : node["title"], "data" : {"label": node["title"]}, "position": {}})
+    
+    if "quotes" in node:
+        quotes[node["title"]] = (node["summary"], node["quotes"])
     
     # If there is a parent, add an edge
     if parent:
@@ -29,3 +33,5 @@ add_node_and_edges(data)
 print("Nodes:", nodes)
 print("------------------------------------------")
 print("Edges:", edges)
+print("------------------------------------------")
+print("Quotes:", quotes)
