@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from "src/components/Button/Button";
 import Mindmap from "src/components/Mindmap/Mindmap";
+import 'src/pages/Home.css';
 
 function Home() {
     let t_file, a_file;
@@ -35,24 +36,26 @@ function Home() {
 
     return (
       <>
-        <div id="header">
-          <h1>reMind.ai</h1>
+        <div id='box'>
+          <div id="header">
+            <h1>reMind.ai</h1>
 
-          <div id="submitWrapper">
-            <div id="transcript">
-                <input id="t_input" type='file' onChange={addAudio} />
-                <Button id="t" name="transcript file" onClick={handleClick}/>
-            </div>
+            <div id="submitWrapper">
+              <div id="transcript">
+                  <input id="t_input" type='file' onChange={addAudio} />
+                  <Button id="t" name="transcript file" onClick={handleClick}/>
+              </div>
 
-            <div id="audio">
-                <input id="a_input" type='file' onChange={addTranscript} />
-                <Button id="a" name="audio file" onClick={handleClick}/>
+              <div id="audio">
+                  <input id="a_input" type='file' onChange={addTranscript} />
+                  <Button id="a" name="audio file" onClick={handleClick}/>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="mindmap">
-          <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges} infoDict={infoDict}/>
+          <div id="mindmap">
+            <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges} infoDict={infoDict}/>
+          </div>
         </div>
       </>
     );
