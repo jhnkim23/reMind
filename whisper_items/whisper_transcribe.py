@@ -9,8 +9,6 @@ import re
 from bs4 import BeautifulSoup
 
 model_size = "large-v2"
-
-
 model = WhisperModel(model_size, device="cpu", compute_type="int8") 
 
 #URL = sys.argv[1]
