@@ -3,14 +3,28 @@ from subprocess import call
 from faster_whisper import WhisperModel
 import sys
 from pydub import AudioSegment
-
+import requests
+import urllib.request
+import re
+from bs4 import BeautifulSoup
 
 model_size = "large-v2"
 
 
 model = WhisperModel(model_size, device="cpu", compute_type="int8") 
+
+#URL = sys.argv[1]
+#response = requests.get(URL)
+#content_type = response.headers['content-type']
+#while count < len(content_type):
+#    if content_type[-1*count] == ".":
+#        file_type = content_type[-1*count:]
+#        break
+#    count+=1
+#
+#open(audio+file_type, "wb").write(response.content)
+
 audio_file = sys.argv[1]
-print(audio_file)
 count = 1
 
 while count < len(audio_file):
