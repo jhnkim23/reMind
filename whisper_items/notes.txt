@@ -1,4 +1,4 @@
-line 11: model = WhisperModel(model_size, device="cpu", compute_type="int8")
+line 12: model = WhisperModel(model_size, device="cpu", compute_type="int8")
 on certain machines with nvidia GPU's  setting device to "cuda" and compute_type to "float16" 
 may significantly improve runtimes if the device is compatible
 
