@@ -25,16 +25,18 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
             await load(node.id);
         }
         setPopup(!popup);
+        var divInfo = document.getElementById('node-wrapper');
+        divInfo.scrollTop = 0;
     };
 
     async function changeNode(nodeID) {
-        return new Promise((resolve,reject)=>{
+        return new Promise((resolve)=>{
             setNodeID(nodeID);
             resolve();
         });
     }
     async function load(nodeID) {
-        return new Promise((resolve, reject)=> {
+        return new Promise((resolve)=> {
             setQuotes(infoDict[nodeID][1]);
             setSummary(infoDict[nodeID][0]);
             resolve();
@@ -60,7 +62,7 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
     const [captureElementClick, setCaptureElementClick] = useState(true);
 
     return (
-        <div style={{position: 'relative'}}>
+        <div style={{position: 'relative', display:'flex'}}>
             <div id='node-wrapper' style={{right: popup ? '0' : '-100%'}}>
                 <NodePopup popup={popup} setPopup={setPopup} nodeID={nodeID} quotes={quotes} summary={summary}/>
             </div>
