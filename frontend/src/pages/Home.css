@@ -1,0 +1,12 @@
+#box {
+    display: flex;
+    flex-flow: column;
+    height:100%;
+}
+
+#header {
+}
+
+#mindmap {
+    flex-grow : 1;
+}
