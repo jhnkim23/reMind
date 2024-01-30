@@ -10,7 +10,7 @@ function NodePopup({popup, setPopup, nodeID, quotes, summary}) {
     }
 
     const quoteItems = quotes.map(quote => 
-        <li key={quote}>{quote}</li>
+        <li key={quote}>"{quote}"</li>
     );
 
     return (

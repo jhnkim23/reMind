@@ -19,10 +19,11 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
 
     async function handleNodeClick (e, node) {
         e.preventDefault();
-        console.log('click node', node);
-        
-        await changeNode(node.id);
-        await load(node.id);
+        if (popup === false) {
+            console.log('click node', node);
+            await changeNode(node.id);
+            await load(node.id);
+        }
         setPopup(!popup);
     };
 
@@ -74,7 +75,6 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
                     fitView
                 >
                     <Controls />
-                    <MiniMap />
                     <Background variant="dots" gap={12} size={1} />
                 </ReactFlow>
             </div>
