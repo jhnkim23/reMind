@@ -3,7 +3,7 @@ import json
 
 nodes = []
 edges = []
-quotes = {}
+infoDict = {}
 
 with open('abc.json', 'r') as file:
     data = json.load(file)
@@ -12,12 +12,12 @@ with open('abc.json', 'r') as file:
 def add_node_and_edges(node, parent=None):
     # Add the node to the nodes array
     if parent == None:
-        nodes.append({"id" : node["title"], "type" : "input", "data" : {"label": node["title"]}, "position": {}})
+        nodes.append({"id" : node["title"], "type" : "input", "data" : {"label": node["title"]}, "position": {'x':0, 'y':0}})
     else:
-        nodes.append({"id" : node["title"], "data" : {"label": node["title"]}, "position": {}})
+        nodes.append({"id" : node["title"], "data" : {"label": node["title"]}, "position": {'x':0, 'y':0}})
     
     if "quotes" in node:
-        quotes[node["title"]] = (node["summary"], node["quotes"])
+        infoDict[node["title"]] = [node["summary"], node["quotes"]]
     
     # If there is a parent, add an edge
     if parent:
@@ -37,4 +37,4 @@ print("Nodes:", nodes)
 print("------------------------------------------")
 print("Edges:", edges)
 print("------------------------------------------")
-print("Quotes:", quotes)
+print("InfoDict:", infoDict)
