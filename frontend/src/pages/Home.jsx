@@ -1,31 +1,12 @@
 import React, { useState } from 'react';
 import Button from "src/components/Button/Button";
 import Mindmap from "src/components/Mindmap/Mindmap";
-<<<<<<< HEAD
-=======
 import 'src/pages/Home.css';
->>>>>>> 60fd2fd33d8fcb119c59114553bc6a5fce87de95
 
 function Home() {
     let t_file, a_file;
     const [nodes, setNodes] = useState([]);
     const [edges, setEdges] = useState([]);
-<<<<<<< HEAD
-
-    function handleClick(e) {
-      console.log(e.target.id)
-      setNodes([{
-        id: '1',
-        data: { label: 'Hello' },
-        position: { x: 0, y: 0 },
-      },
-      {
-        id: '2',
-        data: { label: 'World' },
-        position: { x: 100, y: 100 },
-      },]);
-      setEdges([{ id: '1-2', source: '1', target: '2'},]);
-=======
     const [infoDict, setInfoDict] = useState({});
 
     function handleClick(e) {
@@ -44,7 +25,6 @@ function Home() {
       //   position: { x: 100, y: 100 },
       // },]);
       // setEdges([{ id: '1-2', source: '1', target: '2'},]);
->>>>>>> 60fd2fd33d8fcb119c59114553bc6a5fce87de95
     }
 
     const addAudio = (e) => {
@@ -59,26 +39,6 @@ function Home() {
 
     return (
       <>
-<<<<<<< HEAD
-        <div id="header">
-          <h1>reMind.ai</h1>
-
-          <div id="submitWrapper">
-            <div id="transcript">
-                <input id="t_input" type='file' onChange={addAudio} />
-                <Button id="t" name="transcript file" onClick={handleClick}/>
-            </div>
-
-            <div id="audio">
-                <input id="a_input" type='file' onChange={addTranscript} />
-                <Button id="a" name="audio file" onClick={handleClick}/>
-            </div>
-          </div>
-        </div>
-
-        <div id="mindmap">
-          <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges}/>
-=======
         <div id='box'>
           <div id="header">
             <h1>reMind.ai</h1>
@@ -99,7 +59,6 @@ function Home() {
           <div id="mindmap">
             <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges} infoDict={infoDict}/>
           </div>
->>>>>>> 60fd2fd33d8fcb119c59114553bc6a5fce87de95
         </div>
       </>
     );
