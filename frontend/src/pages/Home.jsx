@@ -25,6 +25,7 @@ function Home() {
     }
     
     const addAudio = (e) => {
+      e.preventDefault();
       const a=URL.createObjectURL(e.target.files[0])
       a_file = a;
 
@@ -46,6 +47,7 @@ function Home() {
   }
 
   const addTranscript = (e) => {
+      e.preventDefault();
       const t=URL.createObjectURL(e.target.files[0])
       t_file = t;
 
