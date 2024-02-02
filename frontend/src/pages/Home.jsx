@@ -38,11 +38,12 @@ function Home() {
       // },]);
       // setEdges([{ id: '1-2', source: '1', target: '2'},]);
     }
-
+    
     const addAudio = (e) => {
       const a=URL.createObjectURL(e.target.files[0])
       a_file = a;
-
+      
+      /*
       const formData = new FormData()
       formData.append("audio file", a_file)
 
@@ -58,12 +59,14 @@ function Home() {
             // handle errors
             console.log(error);
       });
+      */
   }
 
   const addTranscript = (e) => {
       const t=URL.createObjectURL(e.target.files[0])
       t_file = t;
-
+      
+      /*
       const formData = new FormData()
       formData.append("text file", t_file)
 
@@ -79,6 +82,7 @@ function Home() {
             // handle errors
             console.log(error);
       });
+      */
   }
 
     return (
