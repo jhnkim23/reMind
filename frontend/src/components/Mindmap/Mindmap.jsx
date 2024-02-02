@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback} from 'react';
+import ELK from 'elkjs/lib/elk.bundled.js';
 import ReactFlow, {
     Controls,
     Background,
-    MiniMap,
     applyNodeChanges,
     applyEdgeChanges,
   } from 'reactflow';
@@ -11,12 +11,54 @@ import NodePopup from 'src/components/NodePopup/NodePopup';
 import 'reactflow/dist/style.css';
 import 'src/components/Mindmap/Mindmap.css';
 
-function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
+const elk = new ELK();
+const elkOptions = {
+    'elk.algorithm': 'org.eclipse.elk.radial',
+    'elk.layered.spacing.nodeNodeBetweenLayers': '40',
+    'elk.spacing.nodeNode': '40',
+};
+
+const getLayoutedElements = (nodes, edges, options = {}) => {
+    const isHorizontal = options?.['elk.direction'] === 'RIGHT';
+    const graph = {
+        id: 'root',
+        layoutOptions: options,
+        children: nodes.map((node) => ({
+        ...node,
+        // Adjust the target and source handle positions based on the layout
+        // direction.
+        targetPosition: isHorizontal ? 'left' : 'top',
+        sourcePosition: isHorizontal ? 'right' : 'bottom',
+    
+        // Hardcode a width and height for elk to use when layouting.
+        width: 150,
+        height: 50,
+        })),
+        edges: edges,
+    };
+    
+    return elk
+        .layout(graph)
+        .then((layoutedGraph) => ({
+        nodes: layoutedGraph.children.map((node) => ({
+            ...node,
+            // React Flow expects a position property on the node instead of `x`
+            // and `y` fields.
+            position: { x: node.x, y: node.y },
+        })),
+    
+        edges: layoutedGraph.edges,
+        }))
+        .catch(console.error);
+    };
+
+function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, setNodesAdded, infoDict}) {
     const [popup, setPopup] = useState(false);
     const [nodeID, setNodeID] = useState("");
     const [quotes, setQuotes] = useState([]);
     const [summary, setSummary] = useState("");
 
+    const [captureElementClick, setCaptureElementClick] = useState(true);
     async function handleNodeClick (e, node) {
         e.preventDefault();
         if (popup === false) {
@@ -59,7 +101,30 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
         [],
     );
 
-    const [captureElementClick, setCaptureElementClick] = useState(true);
+    const onLayout = useCallback(
+        ({ direction }) => {
+            const opts = { 'elk.direction': direction, ...elkOptions };
+            const ns = nodes;
+            const es = edges;
+    
+            getLayoutedElements(ns, es, opts).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+            setNodes(layoutedNodes);
+            setEdges(layoutedEdges);
+    
+            //window.requestAnimationFrame(() => fitView());
+            });
+        },
+        [nodes, edges]
+        );
+    
+    // Calculate the initial layout on mount.
+    // useLayoutEffect(() => {
+    // onLayout({ direction: 'DOWN' });
+    // }, []);
+    if (nodesAdded) {
+        onLayout({ direction: 'DOWN' });
+        setNodesAdded(!nodesAdded);
+    }
 
     return (
         <div style={{position: 'relative', display:'flex'}}>
@@ -74,11 +139,11 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
                     onEdgesChange={onEdgesChange}
                     onNodeClick={captureElementClick ? handleNodeClick : undefined}
                     onClick={handlePopupExit}
-                    fitView
+                    // fitView={true}
                 >
                     <Controls />
                     <Background variant="dots" gap={12} size={1} />
-                </ReactFlow>
+                </ReactFlow>;
             </div>
         </div>
     );

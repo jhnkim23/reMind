@@ -8,6 +8,7 @@ function App() {
   )
 }
 
+<<<<<<< HEAD
 export default App
 
 
@@ -48,3 +49,6 @@ export default App
 // }
 
 // export default App;
+=======
+export default App
+>>>>>>> bd18eb1e9a1729faa2a6c68e0d983104f348ebd1

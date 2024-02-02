@@ -16,6 +16,7 @@ RUN npm install axios
 #pip install djangorestframework django-cors-headers
 #npm install axios
 
+RUN npm install elkjs
 
 RUN npm run build
 
