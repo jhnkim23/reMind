@@ -1,10 +1,10 @@
 services:
   api:
-    build: ./backend/api        
+    build: ./backend  
     ports:
       - "8000:8000"
     volumes:
-      - ./api:/api
+      - ./backend:/backend
     command: bash -c "python manage.py runserver 0.0.0.0:8000"
 
   web:

@@ -9,7 +9,6 @@ function App() {
 }
 
 export default App
-<<<<<<< HEAD
 
 
 // // import React from 'react';
@@ -49,5 +48,3 @@ export default App
 // }
 
 // export default App;
-=======
->>>>>>> 60fd2fd33d8fcb119c59114553bc6a5fce87de95
