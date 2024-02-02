@@ -20,7 +20,7 @@ model = WhisperModel(model_size, device="cpu", compute_type="int8")
 #        break
 #    count+=1
 #
-#open(audio+file_type, "wb").write(response.content)
+#open("audio"+file_type, "wb").write(response.content)
 
 audio_file = sys.argv[1]
 count = 1
