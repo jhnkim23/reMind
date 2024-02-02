@@ -1,4 +1,4 @@
-import React, { useState, useCallback} from 'react';
+import React, { useState, useCallback, useEffect} from 'react';
 import ELK from 'elkjs/lib/elk.bundled.js';
 import ReactFlow, {
     Controls,
@@ -14,8 +14,8 @@ import 'src/components/Mindmap/Mindmap.css';
 const elk = new ELK();
 const elkOptions = {
     'elk.algorithm': 'org.eclipse.elk.radial',
-    'elk.layered.spacing.nodeNodeBetweenLayers': '40',
-    'elk.spacing.nodeNode': '40',
+    'elk.layered.spacing.nodeNodeBetweenLayers': '80',
+    'elk.spacing.nodeNode': '100',
 };
 
 const getLayoutedElements = (nodes, edges, options = {}) => {
@@ -52,7 +52,7 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
         .catch(console.error);
     };
 
-function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, setNodesAdded, infoDict}) {
+function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, infoDict}) {
     const [popup, setPopup] = useState(false);
     const [nodeID, setNodeID] = useState("");
     const [quotes, setQuotes] = useState([]);
@@ -116,15 +116,14 @@ function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, setNodesAdded, i
         },
         [nodes, edges]
         );
-    
+
     // Calculate the initial layout on mount.
     // useLayoutEffect(() => {
     // onLayout({ direction: 'DOWN' });
     // }, []);
-    if (nodesAdded) {
+    useEffect(() => {
         onLayout({ direction: 'DOWN' });
-        setNodesAdded(!nodesAdded);
-    }
+    }, [nodesAdded]);
 
     return (
         <div style={{position: 'relative', display:'flex'}}>
