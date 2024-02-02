@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useLayoutEffect} from 'react';
+import React, { useState, useCallback} from 'react';
 import ELK from 'elkjs/lib/elk.bundled.js';
 import ReactFlow, {
     Controls,
@@ -13,10 +13,10 @@ import 'src/components/Mindmap/Mindmap.css';
 
 const elk = new ELK();
 const elkOptions = {
-    'elk.algorithm': 'radial',
-    'elk.layered.spacing.nodeNodeBetweenLayers': '100',
-    'elk.spacing.nodeNode': '80',
-    };
+    'elk.algorithm': 'org.eclipse.elk.radial',
+    'elk.layered.spacing.nodeNodeBetweenLayers': '40',
+    'elk.spacing.nodeNode': '40',
+};
 
 const getLayoutedElements = (nodes, edges, options = {}) => {
     const isHorizontal = options?.['elk.direction'] === 'RIGHT';
@@ -52,7 +52,7 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
         .catch(console.error);
     };
 
-function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
+function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, setNodesAdded, infoDict}) {
     const [popup, setPopup] = useState(false);
     const [nodeID, setNodeID] = useState("");
     const [quotes, setQuotes] = useState([]);
@@ -103,25 +103,27 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
 
     const onLayout = useCallback(
         ({ direction }) => {
-          const opts = { 'elk.direction': direction, ...elkOptions };
-          const ns = nodes;
-          const es = edges;
+            const opts = { 'elk.direction': direction, ...elkOptions };
+            const ns = nodes;
+            const es = edges;
     
-          getLayoutedElements(ns, es, opts).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+            getLayoutedElements(ns, es, opts).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
             setNodes(layoutedNodes);
             setEdges(layoutedEdges);
     
-            // window.requestAnimationFrame(() => fitView());
-          });
+            //window.requestAnimationFrame(() => fitView());
+            });
         },
         [nodes, edges]
-      );
+        );
     
     // Calculate the initial layout on mount.
-    if (nodes != []) {
-        useLayoutEffect(() => {
-            onLayout({ direction: 'DOWN' });
-        }, []);
+    // useLayoutEffect(() => {
+    // onLayout({ direction: 'DOWN' });
+    // }, []);
+    if (nodesAdded) {
+        onLayout({ direction: 'DOWN' });
+        setNodesAdded(!nodesAdded);
     }
 
     return (
@@ -137,7 +139,7 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
                     onEdgesChange={onEdgesChange}
                     onNodeClick={captureElementClick ? handleNodeClick : undefined}
                     onClick={handlePopupExit}
-                    fitView={true}
+                    // fitView={true}
                 >
                     <Controls />
                     <Background variant="dots" gap={12} size={1} />
