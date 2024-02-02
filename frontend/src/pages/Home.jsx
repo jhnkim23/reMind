@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import Button from "src/components/Button/Button";
 import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
-<<<<<<< HEAD
 import axios from 'axios'; 
 
-=======
->>>>>>> bd18eb1e9a1729faa2a6c68e0d983104f348ebd1
 
 function Home() {
     let t_file, a_file;
