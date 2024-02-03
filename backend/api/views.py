@@ -58,7 +58,7 @@ class CreateTranscriptView(APIView):
 
         serializer = self.serializer_class(data = request.data)
         if serializer.is_valid():
-            input_data = serializer.data.input_data
+            input_data = serializer.data.get('input_data')
             #Call the Whisper Script I think? and like make a transcript field
             #then j slot it into the same folder?
             queryset = Transcript.objects.filter(input_data = input_data)
