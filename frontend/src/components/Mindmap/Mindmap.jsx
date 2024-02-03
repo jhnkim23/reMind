@@ -72,7 +72,7 @@ function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
                     onEdgesChange={onEdgesChange}
                     onNodeClick={captureElementClick ? handleNodeClick : undefined}
                     onClick={handlePopupExit}
-                    // fitView={true}
+                    fitView={true}
                 >
                     <Controls />
                     <Background variant="dots" gap={12} size={1} />
