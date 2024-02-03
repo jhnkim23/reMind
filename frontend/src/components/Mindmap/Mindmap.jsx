@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect} from 'react';
-import ELK from 'elkjs/lib/elk.bundled.js';
 import ReactFlow, {
     Controls,
     Background,
@@ -11,48 +10,7 @@ import NodePopup from 'src/components/NodePopup/NodePopup';
 import 'reactflow/dist/style.css';
 import 'src/components/Mindmap/Mindmap.css';
 
-const elk = new ELK();
-const elkOptions = {
-    'elk.algorithm': 'org.eclipse.elk.radial',
-    'elk.layered.spacing.nodeNodeBetweenLayers': '80',
-    'elk.spacing.nodeNode': '100',
-};
-
-const getLayoutedElements = (nodes, edges, options = {}) => {
-    const isHorizontal = options?.['elk.direction'] === 'RIGHT';
-    const graph = {
-        id: 'root',
-        layoutOptions: options,
-        children: nodes.map((node) => ({
-        ...node,
-        // Adjust the target and source handle positions based on the layout
-        // direction.
-        targetPosition: isHorizontal ? 'left' : 'top',
-        sourcePosition: isHorizontal ? 'right' : 'bottom',
-    
-        // Hardcode a width and height for elk to use when layouting.
-        width: 150,
-        height: 50,
-        })),
-        edges: edges,
-    };
-    
-    return elk
-        .layout(graph)
-        .then((layoutedGraph) => ({
-        nodes: layoutedGraph.children.map((node) => ({
-            ...node,
-            // React Flow expects a position property on the node instead of `x`
-            // and `y` fields.
-            position: { x: node.x, y: node.y },
-        })),
-    
-        edges: layoutedGraph.edges,
-        }))
-        .catch(console.error);
-    };
-
-function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, infoDict}) {
+function Mindmap({nodes, edges, setNodes, setEdges, infoDict}) {
     const [popup, setPopup] = useState(false);
     const [nodeID, setNodeID] = useState("");
     const [quotes, setQuotes] = useState([]);
@@ -100,30 +58,6 @@ function Mindmap({nodes, edges, nodesAdded, setNodes, setEdges, infoDict}) {
         (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
         [],
     );
-
-    const onLayout = useCallback(
-        ({ direction }) => {
-            const opts = { 'elk.direction': direction, ...elkOptions };
-            const ns = nodes;
-            const es = edges;
-    
-            getLayoutedElements(ns, es, opts).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-            setNodes(layoutedNodes);
-            setEdges(layoutedEdges);
-    
-            //window.requestAnimationFrame(() => fitView());
-            });
-        },
-        [nodes, edges]
-        );
-
-    // Calculate the initial layout on mount.
-    // useLayoutEffect(() => {
-    // onLayout({ direction: 'DOWN' });
-    // }, []);
-    useEffect(() => {
-        onLayout({ direction: 'DOWN' });
-    }, [nodesAdded]);
 
     return (
         <div style={{position: 'relative', display:'flex'}}>
