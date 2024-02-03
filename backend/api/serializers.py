@@ -9,5 +9,5 @@ class TranscriptSerializer(serializers.ModelSerializer):
 class CreateTranscriptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transcript
-        fields = ('input_data', 'output_filename')
+        fields = ('id','input_data')
         
