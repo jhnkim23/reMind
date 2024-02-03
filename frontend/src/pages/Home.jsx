@@ -130,7 +130,7 @@ function Home() {
     return (
       <>
         <div id='box'>
-          <div id="header">
+          <div id="home-header">
             <h1>reMind.ai</h1>
 
             <div id="submitWrapper">

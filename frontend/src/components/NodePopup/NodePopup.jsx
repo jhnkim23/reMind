@@ -16,7 +16,7 @@ function NodePopup({popup, setPopup, nodeID, quotes, summary}) {
     return (
         <>
             <div id='popup-wrapper'>
-                <div id='header'>
+                <div id='node-popup-header'>
                     <AiIcons.AiOutlineClose
                         onClick={handleClick} size={28}
                         style={{cursor:'pointer'}}
