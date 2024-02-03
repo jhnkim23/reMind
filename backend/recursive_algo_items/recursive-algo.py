@@ -22,7 +22,7 @@ def add_node_and_edges(node, parent=None):
     # If there is a parent, add an edge
     if parent:
         #edges.append((parent, node["title"]))
-        edges.append({"id" : parent + "-" + node["title"], "source" : parent, "target": node["title"], "type": "smoothstep"})
+        edges.append({"id" : parent + "-" + node["title"], "source" : parent, "target": node["title"], "type": "straight"})
 
     # Recursively add sub-nodes
     if "sub-topics" in node and node["sub-topics"]:
