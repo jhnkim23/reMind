@@ -2,6 +2,8 @@ import React, { useState, useCallback} from 'react';
 import Button from "src/components/Button/Button";
 import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
+import { AiFillInfoCircle } from "react-icons/ai";
+import AboutPopup from 'src/components/AboutPopup/AboutPopup'
 
 import ELK from 'elkjs/lib/elk.bundled.js';
 
@@ -53,7 +55,12 @@ function Home() {
     const [responseData, setResponseData] = useState('');
     const [audioFile, setAudioFile] = useState(null);
     const [transcriptFile, setTranscriptFile] = useState(null);
+    const [aboutPopUp, setAboutPopUp] = useState(false);
     
+    const togglePopup = () => {
+      setAboutPopUp(!aboutPopUp);
+    };
+
     async function uploadFile(file, type) {
       const formData = new FormData();
       formData.append(type, file);
@@ -149,8 +156,14 @@ function Home() {
           <div id="mindmap">
             <Mindmap nodes={nodes} edges={edges} setNodes={setNodes} setEdges={setEdges} infoDict={infoDict}/>
           </div>
+
+          <div id = "aboutIcon">
+            <AiFillInfoCircle className = "icon-dim" size = "40px" onClick = {togglePopup}/>
+            {aboutPopUp && <AboutPopup onClose={togglePopup}/>}
+          </div>
         </div>
       </>
     );
   }
+
 export default Home;
