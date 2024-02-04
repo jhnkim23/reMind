@@ -142,13 +142,13 @@ function Home() {
 
             <div id="submitWrapper">
               <div id="transcript">
-                  <input id="t_input" type='file' onChange={addTranscript} />
+                  <input id="t_input" type='file' accept = ".txt" onChange={addTranscript} />
                   <Button id="t" name="transcript file" onClick={handleClick}/>
               </div>
 
               <div id="audio">
-                  <input id="a_input" type='file' onChange={addAudio} />
-                  <Button id="a" name="audio file" onClick={handleClick}/>
+                  <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
+                  <Button id="a" name="audio/video file" onClick={handleClick}/>
               </div>
             </div>
           </div>
