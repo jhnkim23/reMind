@@ -20,6 +20,7 @@ from rest_framework import status
 import os
 import sys
 from .whisper_transcribe import transcribe
+from django.views.decorators.csrf import csrf_exempt 
 
 #from ../whisper_items/whisper_transcribe import transcribe
 
@@ -48,6 +49,20 @@ def process_text(request):
     else:
         return JsonResponse({'error': 'Only POST requests are allowed'}, status=405)
     
+@csrf_exempt
+def upload_transcript(request):
+    if request.method == 'POST' and request.FILES['text file']:
+        # Example: Process text data
+        file = request.FILES['text file']
+        contents= file.read().decode("utf-8")
+        print(contents)
+        # Process text_data...
+        # console.log(text_data)
+        # Return a response
+        return JsonResponse({'message': 'Text processed successfully'}, status=200)
+    else:
+        return JsonResponse({'error': 'Only POST requests are allowed'}, status=405)
+
 
 
 class TranscriptView(generics.ListAPIView):
@@ -63,13 +78,17 @@ class CreateTranscriptView(APIView):
 
         serializer = self.serializer_class(data = request.data)
         if serializer.is_valid():
-            input_file = request.FILES['file']
+            input_data = request.data.get('input_data')
+            input_file = request.FILES.get('input_file')
+            for key in request.FILES:
+                filename = request.FILES[key]._get_name()
+                input_file = request.FILES[key].file
+                print(request.FILES[key].content_type)
 
-            #with open(input_file.name()) as dest:
+            #with open(filename, "w") as dest:
             #    for chunk in input_file.chunks():
             #        dest.write(chunk) 
-            #transcribe()
-            input_data = input_file.name()
+            input_data = transcribe(input_file, filename)
             #input_data = serializer.data.get('input_data')
             
             
@@ -78,7 +97,7 @@ class CreateTranscriptView(APIView):
                 #maybe generate a random code to slot into end of filename, to be able to store in same folder
                 #for now
                 #Idk if these are going to be stored long term here, maybe Gman's script deletes these?
-                transcript = Transcript(input_data = input_data, output_filename = "audio_output.txt")
+                transcript = Transcript(input_file = input_file, input_data = input_data, output_filename = "audio_output.txt")
                 transcript.save()
             else:
                 transcript = queryset[0]

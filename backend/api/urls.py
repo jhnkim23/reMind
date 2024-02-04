@@ -10,10 +10,11 @@ from .views import index
 from .views import process_text
 from .views import home
 from .views import CreateTranscriptView
+from .views import upload_transcript
 
 urlpatterns = [
     path('', index),
     path('process_text/', process_text, name='process_text'), 
-    path('create-transcript/', CreateTranscriptView.as_view())
-
+    path('create-transcript/', CreateTranscriptView.as_view()),
+    path('upload_transcript/', upload_transcript)
 ]
