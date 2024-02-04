@@ -17,6 +17,11 @@ from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+import os
+import sys
+from .whisper_transcribe import transcribe
+
+#from ../whisper_items/whisper_transcribe import transcribe
 
 def home(request):
     return HttpResponse("Welcome to the backend!") 
@@ -58,9 +63,16 @@ class CreateTranscriptView(APIView):
 
         serializer = self.serializer_class(data = request.data)
         if serializer.is_valid():
-            input_data = serializer.data.get('input_data')
-            #Call the Whisper Script I think? and like make a transcript field
-            #then j slot it into the same folder?
+            input_file = request.FILES['file']
+
+            #with open(input_file.name()) as dest:
+            #    for chunk in input_file.chunks():
+            #        dest.write(chunk) 
+            #transcribe()
+            input_data = input_file.name()
+            #input_data = serializer.data.get('input_data')
+            
+            
             queryset = Transcript.objects.filter(input_data = input_data)
             if queryset.exists() == False:
                 #maybe generate a random code to slot into end of filename, to be able to store in same folder
@@ -69,6 +81,8 @@ class CreateTranscriptView(APIView):
                 transcript = Transcript(input_data = input_data, output_filename = "audio_output.txt")
                 transcript.save()
             else:
-                room = queryset[0]
+                transcript = queryset[0]
             return Response(TranscriptSerializer(transcript).data, status=status.HTTP_200_OK) 
         return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)
+
+        

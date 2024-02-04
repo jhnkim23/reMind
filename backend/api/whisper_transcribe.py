@@ -3,10 +3,7 @@ from subprocess import call
 from faster_whisper import WhisperModel
 import sys
 from pydub import AudioSegment
-import requests
-import urllib.request
-import re
-from bs4 import BeautifulSoup
+
 
 
 def transcribe(filename):
@@ -28,7 +25,7 @@ def transcribe(filename):
     open("audio"+file_type, "wb").write(response.content)
     audio_file = "audio"+file_type
     """
-    audio_file = sys.argv[1]
+    audio_file = filename
     count = 1
 
     while count < len(audio_file):
@@ -48,8 +45,8 @@ def transcribe(filename):
             for segment in segments:
                 f.write("%s \n" % (segment.text))
                 count += 1
-                if count > 10:
-                    break
+                #if count > 10:
+                #    break
 
 
             #JUST RUN WHISPER
@@ -68,5 +65,5 @@ def transcribe(filename):
             for segment in segments:
                 f.write("%s \n" % (segment.text))
                 count += 1
-                if count > 10:
-                    break
+                #if count > 10:
+                #    break
