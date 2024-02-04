@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
-    'api',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -133,3 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:5173'
 ]
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
+CSRF_ALLOWED_ORIGINS = ["http://localhost:5173"]
+CORS_ORIGINS_WHITELIST = ["http://localhost:5173"]
