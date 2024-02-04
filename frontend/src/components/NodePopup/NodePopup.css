@@ -11,3 +11,12 @@
     width:100%;
     height:100%;
 }
+
+h4 {
+    padding-left: 20px;
+}
+
+#summary {
+    padding-left: 20px;
+    padding-right: 20px
+}
