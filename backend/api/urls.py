@@ -6,13 +6,15 @@
 # ]
 from django.contrib import admin
 from django.urls import path
+from .views import index
+from .views import process_text
+from .views import home
 from .views import CreateTranscriptView
-
-from . import views
-
+from .views import upload_transcript
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('upload_transcript/', views.upload_transcript)
-
+    path('', index),
+    path('process_text/', process_text, name='process_text'), 
+    path('create-transcript/', CreateTranscriptView.as_view()),
+    path('upload_transcript/', upload_transcript)
 ]

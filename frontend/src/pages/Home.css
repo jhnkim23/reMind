@@ -4,10 +4,10 @@
     height:100%;
 }
 
-#header {
+#home-header {
     text-align: center;
     padding-bottom: 50px;
-}
+} 
 
 #audio {
     padding-top: 10px;
@@ -15,4 +15,19 @@
 
 #mindmap {
     flex-grow : 1;
+}
+
+#aboutIcon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+}  
+
+.icon-dim {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.icon-dim:hover {
+    opacity: 0.5; /* Dim the icon on hover */
 }
