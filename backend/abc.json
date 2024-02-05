@@ -1,243 +1,74 @@
 {
-  "title": "The Impact of AI on Daily Life",
-  "summary": "Sam Altman discusses the various ways he uses AI in his daily life and the potential benefits and risks of AI technology.",
+  "title": "Online Information Session on Health Informatics",
+  "summary": "UC Berkeley Extension offers a fully online professional program in health informatics. The program prepares students for in-demand positions in the healthcare field.",
   "sub-topics": [
     {
-      "title": "AI in Daily Life",
-      "summary": "Altman uses AI for summarization, translation, and drafting tweets.",
+      "title": "Importance of Health Informatics",
+      "summary": "Health informatics is essential for quality patient-centered healthcare and is projected to drive job growth in the healthcare industry.",
       "quotes": [
-        "One thing I use it for every day is help with summarization.",
-        "I used it to translate an article for someone I’m meeting next week.",
-        "I used it to help me draft a tweet that I was having a hard time with."
+        "Health informatics is essential to the delivery of quality patient-centered health care in the United States and around the world.",
+        "The healthcare industry will continue to drive the nation's employment growth through 2026 by adding around 4 million new jobs.",
+        "The need to address the Triple Aim improve care quality and population health while reducing costs is driving the need for more health informatics professionals."
       ],
-      "sub_topics": []
-    },
-    {
-      "title": "Viral Reaction to AI Launch",
-      "summary": "Altman expected excitement from the launch but was not surprised by the viral reaction.",
-      "quotes": [
-        "We thought it was going to excite people.",
-        "The people we spend a lot of time with in our bubble had already gotten pretty excited by the technology.",
-        "Why hadn’t this happened before?"
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "Integration of AI into Daily Life",
-      "summary": "Altman envisions AI being integrated into voice interfaces and transforming daily tasks.",
-      "quotes": [
-        "You’ll be able to do this with two-way voice, and it’ll feel real time.",
-        "You can imagine a world where you have a fairly simple and short conversation with the model, and a huge amount of things get done on your behalf.",
-        "It’ll be everywhere, all at once."
-      ],
-      "sub_topics": [
+      "sub-topics": [
         {
-          "title": "Two-Way Voice Interface",
-          "summary": "AI will enable real-time conversations and interactions through voice interfaces.",
+          "title": "Role of Electronic Health Record Systems",
+          "summary": "Electronic health record systems track patient care, provide informed choices for healthcare professionals, and support a more efficient delivery system.",
           "quotes": [
-            "You’ll be able to talk like two people doing conversations, and that’ll be powerful."
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "Automation and Efficiency",
-          "summary": "AI will streamline tasks and accomplish a lot through short conversations.",
-          "quotes": [
-            "A huge amount of things get done on your behalf."
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "Ubiquitous AI",
-          "summary": "AI will be integrated into all products and services, becoming an expected feature.",
-          "quotes": [
-            "We’ll just expect all the products and services we use to have some intelligence baked in."
-          ],
-          "sub-topics": []
-        }
-      ]
-    },
-    {
-      "title": "Potential Risks and Benefits of AI",
-      "summary": "Altman acknowledges the potential for both positive and negative impacts of AI technology.",
-      "quotes": [
-        "Definitely one of the confusing parts of this technology is just the overall power—the good, the potential bad.",
-        "I think we can do a lot to maximize the good and manage and mitigate the bad.",
-        "AI is the technology that the world, that people have always wanted."
-      ],
-      "sub_topics": [
-        {
-          "title": "Identity Verification and Ransom Calls",
-          "summary": "Altman discusses the potential risks of AI in relation to identity verification and ransom calls.",
-          "quotes": [
-            "Thinking about it as a parent, one of the things that seems scary is, how do we know our kids are really our kids?",
-            "We just all need to start telling people this is coming. You can’t trust a voice you hear over the phone anymore.",
-            "People will use code words they’ll verify over video. That’ll work for a while."
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "Social Media and AI",
-          "summary": "Altman acknowledges the potential impact of AI on social media but believes it is hard to predict.",
-          "quotes": [
-            "I think social media is in such a volatile place right now that I’m of course nervous about it.",
-            "I think AI makes it better too. I think these things are just hard to predict."
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "AI Regulation and Oversight",
-          "summary": "Altman emphasizes the need for government regulation and oversight of AI technology.",
-          "quotes": [
-            "I think that models that are above a certain power threshold need to be reported to the government.",
-            "We need an oversight board the way we’ve looked at atomic energy.",
-            "You’ve got to regulate the people at the frontier the most strongly."
+            "Electronic health records help track patient care and allow health professionals to make the most informed and appropriate choices for their patients.",
+            "Electronic health records are associated with clinical decision support systems and the ability to electronically share information with other providers."
           ],
           "sub-topics": [
             {
-              "title": "Government Regulation and Auditing",
-              "summary": "Altman advocates for government oversight and auditing of powerful AI models.",
+              "title": "Top Focus Areas for Health Informatics Work",
+              "summary": "Top focus areas for health informatics work include electronic health records, improving quality outcomes through health IT, data analytics, and more.",
               "quotes": [
-                "They should have the oversight of the government.",
-                "They should be audited by external orgs.",
-                "They should be required to pass a set of evaluations for some of the safety issues."
-              ],
-              "sub-topics": []
-            },
-            {
-              "title": "International Coordination",
-              "summary": "Altman suggests the need for international coordination and cooperation in regulating AI.",
-              "quotes": [
-                "We need an IAEA-like international coordination on very powerful training hardware.",
-                "Every government is now paying serious attention."
-              ],
-              "sub-topics": []
-            },
-            {
-              "title": "Short-Term Regulation",
-              "summary": "Altman proposes short-term regulations such as tagging generated content and independent audits.",
-              "quotes": [
-                "All generated content should have to be tagged as generated.",
-                "Let’s require independent audits for these systems and safety standards they have to meet."
+                "Top focus areas for health informatics work included electronic health records, improving quality outcomes through health IT, data analytics, and clinical informatics.",
+                "Hospitals employ a wide range of information and technology leaders to address health information and technology issues."
               ],
               "sub-topics": []
             }
           ]
-        },
-        {
-          "title": "Income Inequality and AI",
-          "summary": "Altman discusses the potential impact of AI on income inequality and supports the idea of basic income.",
-          "quotes": [
-            "I hope AI can reduce inequality and dramatically lift up the floor in the world.",
-            "I’m OK with a world that has trillionaires in it if no one is in poverty.",
-            "AI will raise the floor in a big way."
-          ],
-          "sub-topics": []
         }
       ]
     },
     {
-      "title": "OpenAI's Mission and Approach",
-      "summary": "Altman explains OpenAI's mission, structure, and approach to AI development.",
+      "title": "UC Berkeley Extension's Health Informatics Program",
+      "summary": "UC Berkeley Extension offers a fully online health informatics program that prepares students for a wide range of positions in the field.",
       "quotes": [
-        "We’re a non-profit that has a capped profit subsidiary.",
-        "Profit is not bad. I’m very in favor of capitalism.",
-        "We need to start acting for sure. We’ve been trying to raise the alarm bells on this for eight years now."
+        "UC Berkeley Extension is the continuing education department of UC Berkeley and offers more than 65 professional certificates and specialized programs.",
+        "The health informatics certificate program can prepare students for positions such as health informatics specialists, clinical informatics management, and more.",
+        "The program consists of four required courses that can be completed online in as little as three months."
       ],
-      "sub_topics": [
+      "sub-topics": [
         {
-          "title": "OpenAI's Structure",
-          "summary": "OpenAI is a non-profit organization with a capped profit subsidiary.",
+          "title": "Required Courses",
+          "summary": "The program consists of four required courses: Introduction to Health Informatics, Health Informatics Applications, Interoperability Standards and Health Information Exchange, and Electronic Health Record Systems.",
           "quotes": [
-            "We thought really hard and designed a structure where our nonprofit has full control and governance over a capped for-profit subsidiary.",
-            "Profit is not bad. I’m very in favor of capitalism."
+            "The four required courses are Introduction to Health Informatics, Health Informatics Applications, Interoperability Standards and Health Information Exchange, and Electronic Health Record Systems.",
+            "The courses can be taken in any order."
           ],
           "sub-topics": []
         },
         {
-          "title": "Government's Role in AI Regulation",
-          "summary": "Altman emphasizes the need for government regulation and involvement in AI development.",
+          "title": "Course Details",
+          "summary": "Courses are offered online and can be completed at your own pace. Assignments include activities using health informatics applications and real-world projects.",
           "quotes": [
-            "I think we need regulation for models that are above a certain power threshold.",
-            "We need an oversight board the way we’ve looked at atomic energy.",
-            "Every government is now paying serious attention."
+            "Courses are offered online in an ongoing, continuous enrollment format.",
+            "Assignments include activities using health informatics applications and other real-world projects."
           ],
-          "sub-topics": [
-            {
-              "title": "Global Oversight Board",
-              "summary": "Altman suggests the need for an international oversight board for AI technology.",
-              "quotes": [
-                "We need an IAEA-like international coordination on very powerful training hardware."
-              ],
-              "sub-topics": []
-            },
-            {
-              "title": "Short-Term Regulation",
-              "summary": "Altman proposes short-term regulations such as tagging generated content and independent audits.",
-              "quotes": [
-                "All generated content should have to be tagged as generated.",
-                "Let’s require independent audits for these systems and safety standards they have to meet."
-              ],
-              "sub-topics": []
-            }
-          ]
+          "sub-topics": []
         },
         {
-          "title": "OpenAI's Approach",
-          "summary": "OpenAI aims to engage with the world, gather input, and build technology that benefits society.",
+          "title": "Cost and Financial Aid",
+          "summary": "The total cost for all four required courses is around $7,800. Financial aid is not available for this program.",
           "quotes": [
-            "It is our responsibility to educate policymakers and the public.",
-            "We think it’s very important to our mission to deploy things like ChatGPT so that people gain some experience and feeling of the capabilities and limitations of these systems.",
-            "The conversation really needs to start now."
+            "The total cost for all four required courses is around $7,800.",
+            "Financial aid is not available for this program."
           ],
           "sub-topics": []
         }
       ]
-    },
-    {
-      "title": "Challenges and Future Developments",
-      "summary": "Altman discusses the challenges and future developments in AI technology.",
-      "quotes": [
-        "The thing that I think people are really going to be happy about is getting the best answer all the time.",
-        "There’s a lot of stuff that’ll come: images, audio, video, and smarter models.",
-        "We’re still years away from AI affecting the economy enough to require income redistribution."
-      ],
-      "sub_topics": [
-        {
-          "title": "Improving Model Accuracy",
-          "summary": "Altman highlights the goal of consistently providing the best answers through AI models.",
-          "quotes": [
-            "How can we get you the best answer all the time, almost all the time?"
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "Future AI Capabilities",
-          "summary": "Altman discusses the future integration of images, audio, and video into AI models.",
-          "quotes": [
-            "We’ll get images and audio and video in there at some point, and the models will get smarter."
-          ],
-          "sub-topics": []
-        },
-        {
-          "title": "Income Redistribution",
-          "summary": "Altman believes that income redistribution may be necessary in the future but is not currently feasible.",
-          "quotes": [
-            "We are still years away from AI affecting the economy enough to require income redistribution.",
-            "I don’t think we’re decades away."
-          ],
-          "sub-topics": []
-        }
-      ]
-    },
-    {
-      "title": "Responsibility and Adaptability",
-      "summary": "Altman emphasizes the importance of responsibility and adaptability in managing AI technology.",
-      "quotes": [
-        "Humans are just unbelievably adaptable.",
-        "We’ve got to figure out how to manage this and have this go well."
-      ],
-      "sub_topics": []
     }
   ]
 }

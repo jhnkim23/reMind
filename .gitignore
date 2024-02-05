@@ -1,3 +1,3 @@
 backend/whisper_items/Virtual_Information_Session_George_Mason_University.flac
 backend/whisper_items/Virtual_Information_Session_George_Mason_University.mp4
-backend/api_key.env
+backend/api_key.py

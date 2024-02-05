@@ -25,10 +25,10 @@ import subprocess
 from .recursive_algo import func
 import os
 from openai import OpenAI
-
+import api_key
 
 # Access the API key from the environment variable
-api_key='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'
+api_key=api_key.OPENAI_API_KEY
 client=openai.Client(api_key=api_key)
 
 def home(request):
