@@ -4,12 +4,8 @@ import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
-<<<<<<< HEAD
 import Loading from 'src/components/Loading/Loading'
 import axios from "axios";
-=======
-
->>>>>>> gautham6
 import ELK from 'elkjs/lib/elk.bundled.js';
 import axios from 'axios';
 
