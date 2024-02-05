@@ -18,6 +18,8 @@ def add_node_and_edges(node, parent=None):
     
     if "quotes" in node:
         infoDict[node["title"]] = [node["summary"], node["quotes"]]
+    else:
+        infoDict[node["title"]] = [node["summary"], []]
     
     # If there is a parent, add an edge
     if parent:
