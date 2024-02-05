@@ -13,8 +13,7 @@ RUN npm install styled-components
 RUN npm install react-icons
 
 RUN npm install axios
-#pip install djangorestframework django-cors-headers
-#npm install axios
+
 
 RUN npm install elkjs
 
