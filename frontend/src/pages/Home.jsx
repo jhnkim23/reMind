@@ -4,6 +4,7 @@ import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
+import Loading from 'src/components/Loading/Loading'
 import axios from "axios";
 import ELK from 'elkjs/lib/elk.bundled.js';
 
@@ -57,6 +58,8 @@ function Home() {
     const [audioFile, setAudioFile] = useState(null);
     const [transcriptFile, setTranscriptFile] = useState(null);
     const [aboutPopUp, setAboutPopUp] = useState(false);
+    const [isLoadingTranscript, setLoadingTranscript] = useState(false);
+    const [isLoadingAudio, setLoadingAudio] = useState(false);
     
     const togglePopup = () => {
       setAboutPopUp(!aboutPopUp);
@@ -65,6 +68,7 @@ function Home() {
     async function uploadFile(file, type) {
       const formData = new FormData();
       formData.append(type, file);
+      setLoadingTranscript(true);
 
       try {
         const response = await axios.post('http://127.0.0.1:8000/api/upload_transcript/', formData, {
@@ -73,7 +77,7 @@ function Home() {
             }
         });
           console.log(response.data);
-          // Handle your response here
+          //setLoadingTranscript(false);
       } catch (error) {
           console.error(error);
           // Handle error here
@@ -82,6 +86,7 @@ function Home() {
     async function uploadAudio(file, type) {
       const formData = new FormData();
       formData.append(type, file);
+      setLoadingAudio(true);
 
       try {
         const response = await axios.post('http://127.0.0.1:8000/api/create-transcript/', formData, {
@@ -90,7 +95,7 @@ function Home() {
             }
         });
           console.log(response.data);
-          // Handle your response here
+          //setLoadingAudio(false);
       } catch (error) {
           console.error(error);
           // Handle error here
@@ -124,6 +129,7 @@ function Home() {
       if (e.target.id === 't') {
         if (transcriptFile) {
             await uploadFile(transcriptFile, "text file");
+
         } else {
             console.log("No transcript file selected");
         }
@@ -162,11 +168,13 @@ function Home() {
               <div id="transcript">
                   <input id="t_input" type='file' accept = ".txt" onChange={addTranscript} />
                   <Button id="t" name="transcript file" onClick={handleClick}/>
+                  {isLoadingTranscript && <Loading />}
               </div>
 
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
+                  {isLoadingAudio && <Loading />}
               </div>
             </div>
           </div>
