@@ -13,10 +13,17 @@ function NodePopup({popup, setPopup, nodeID, quotes, summary}) {
         <li key={quote}>"{quote}"</li>
     );
 
+    let content;
+    if (quotes.length == 0) {
+        content = "";
+    } else {
+        content = "Quotes";
+    }
+
     return (
         <>
             <div id='popup-wrapper'>
-                <div id='header'>
+                <div id='node-popup-header'>
                     <AiIcons.AiOutlineClose
                         onClick={handleClick} size={28}
                         style={{cursor:'pointer'}}
@@ -28,7 +35,7 @@ function NodePopup({popup, setPopup, nodeID, quotes, summary}) {
                 <div id='content'>
                     <h4>Summary</h4>
                     <p>{summary}</p>
-                    <h4>Quotes</h4>
+                    <h4>{content}</h4>
                     <ul>{quoteItems}</ul>
                 </div>
             </div>
