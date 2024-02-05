@@ -5,7 +5,6 @@ import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
 import Loading from 'src/components/Loading/Loading'
-import axios from "axios";
 import ELK from 'elkjs/lib/elk.bundled.js';
 import axios from 'axios';
 
