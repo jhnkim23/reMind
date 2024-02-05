@@ -9,7 +9,6 @@
 
 from django.http import JsonResponse
 from datetime import datetime
-<<<<<<< HEAD
 
 from .models import Transcript
 from .serializers import TranscriptSerializer, CreateTranscriptSerializer
@@ -17,25 +16,16 @@ from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-=======
->>>>>>> 680a0b7c1618827e8b6cd8dfdf718ebd2440342e
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-
-
-from .models import Transcript
-from .serializers import TranscriptSerializer, CreateTranscriptSerializer
-from rest_framework import generics
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-import os
+import openai
 import sys
-from .whisper_transcribe import transcribe
-from django.views.decorators.csrf import csrf_exempt 
+import json
+import subprocess
+from .recursive_algo import func
+api = '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'
 
-#from ../whisper_items/whisper_transcribe import transcribe
-
+client=openai.Client(api_key=api)
 def home(request):
     return HttpResponse("Welcome to the backend!") 
 def index(request):
@@ -56,10 +46,23 @@ def upload_transcript(request):
         file = request.FILES['text file']
         contents= file.read().decode("utf-8")
         print(contents)
-        # Process text_data...
-        # console.log(text_data)
-        # Return a response
-        return JsonResponse({'message': 'Text processed successfully'}, status=200)
+        response = client.chat.completions.create(model="gpt-3.5-turbo-16k",
+                                             messages=[ { "role": "system",
+                                                        "content": "Given a transcript, your job is to highlight concrete details from the transcription of a meeting down to a main topic and a list of topics. Quotes, summaries, sub-topics should be at max 20 words. Minimize the amount of sub-topics related to the main topic. Maximum of three quotes per sub-topic node.  Each sub-topic should have overarching summarized information. Each sub-topics should have more sub-topics, if any, and should have quotes and concrete details listed from the speakers. Format the output in JSON format as follows below:\n\n\"\"\"\n{\n  \"title\": \"\",\n  \"summary\": \"\",\n  \"sub-topics\": [\n    {\n      \"title\": \"\",\n      \"summary\": \"\",\n      \"quotes\":[\"\"]\n      \"sub_topics\": [\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n      ]\n    },\n    {\n      \"title\": \"\",\n      \"summary\": \"\",\n      \"quotes\":[\"\"]\n      \"sub_topics\": [\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n      ]\n    },\n    {\n      \"title\": \"\",\n      \"summary\": \"\",\n      \"quotes\":[\"\",\"\"]\n      \"sub_topics\": [\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n      ]\n    },\n    {\n      \"title\": \"\",\n      \"summary\": \"\",\n      \"quotes\":[\"\"]\n      \"sub_topics\": [\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n        {\n          \"title\": \"\",\n          \"summary\":\"\" ,\n          \"quotes\":[\"\"]\n\t  \"sub-topics\":[]\n\t  \n        },\n      ]\n    }\n]\n}\n\"\"\""
+                                                        },
+                                                        {"role":"user",
+                                                         "content":contents}],
+                                             temperature=0.5,
+                                             max_tokens=8000,
+                                             top_p=1,
+                                             frequency_penalty=0,
+                                             presence_penalty=0
+        )
+        file_writer=open("abc.json","w")
+        file_writer.write(response.choices[0].message.content)
+        file_writer.close()
+        x=json.dumps(func("abc.json"))
+        return JsonResponse(x, status=200,safe=False)
     else:
         return JsonResponse({'error': 'Only POST requests are allowed'}, status=405)
     
