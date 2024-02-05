@@ -41,6 +41,7 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
           // React Flow expects a position property on the node instead of `x`
           // and `y` fields.
           position: { x: node.x, y: node.y },
+          deletable: false,
       })),
   
       edges: layoutedGraph.edges,
