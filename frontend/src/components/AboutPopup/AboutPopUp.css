@@ -15,8 +15,8 @@
     background-color: gray;
     padding: 20px;
     border-radius: 5px;
-    width: 600px;
-    height: 400px;
+    width: 800px;
+    height: 600px;
   }
   
   #close-button {
@@ -26,6 +26,10 @@
     cursor: pointer;
   }
 
-  #title {
-    align: center;
+  #about-title {
+    text-align: center;
+  }
+
+  #instructions-title {
+    text-align: center;
   }
