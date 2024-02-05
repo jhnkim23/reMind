@@ -4,14 +4,9 @@ import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
-<<<<<<< HEAD
 import Loading from 'src/components/Loading/Loading'
 import axios from "axios";
-=======
-
->>>>>>> gautham6
 import ELK from 'elkjs/lib/elk.bundled.js';
-import axios from 'axios';
 
 const elk = new ELK();
 const elkOptions = {
@@ -80,12 +75,13 @@ function Home() {
                 "Content-Type": "multipart/form-data"
             }
         });
-          console.log(response.data);
+          let data=JSON.parse(response.data);
+          console.log(data);
           //setLoadingTranscript(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
+          let nodesToSet = data["nodes"];
+          let edgesToSet = data["edges"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
-          setInfoDict(response.data.infoDict);
+          setInfoDict(data["infoDict"]);
       } catch (error) {
           console.error(error);
           // Handle error here
@@ -102,12 +98,13 @@ function Home() {
                 "Content-Type": "multipart/form-data"
             }
         });
-          console.log(response.data);
-          //setLoadingAudio(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
+          let data=JSON.parse(response.data);
+          console.log(data);
+          //setLoadingTranscript(false);
+          let nodesToSet = data["nodes"];
+          let edgesToSet = data["edges"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
-          setInfoDict(response.data.infoDict);
+          setInfoDict(data["infoDict"]);
       } catch (error) {
           console.error(error);
           // Handle error here
