@@ -4,7 +4,7 @@ import logo from 'src/assets/loading.gif'
 function Loading() {
   return (
     <>
-        <img src = {logo} alt="loading.." />
+        <img src = {logo} alt="loading..." />
     </>
   );
 }
