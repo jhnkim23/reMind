@@ -4,9 +4,14 @@ import Mindmap from "src/components/Mindmap/Mindmap";
 import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
+<<<<<<< HEAD
 import Loading from 'src/components/Loading/Loading'
 import axios from "axios";
+=======
+
+>>>>>>> gautham6
 import ELK from 'elkjs/lib/elk.bundled.js';
+import axios from 'axios';
 
 const elk = new ELK();
 const elkOptions = {
@@ -173,7 +178,6 @@ function Home() {
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
-                  {isLoadingAudio && <Loading />}
               </div>
             </div>
           </div>
