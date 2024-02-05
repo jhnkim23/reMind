@@ -78,7 +78,7 @@ class CreateTranscriptView(APIView):
 
         serializer = self.serializer_class(data = request.data)
         if serializer.is_valid():
-            input_data = request.data.get('input_data')
+            #input_data = request.data.get('input_data')
             input_file = request.FILES.get('input_file')
             for key in request.FILES:
                 filename = request.FILES[key]._get_name()

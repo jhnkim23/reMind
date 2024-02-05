@@ -34,7 +34,7 @@ function NodePopup({popup, setPopup, nodeID, quotes, summary}) {
                 </div>
                 <div id='content'>
                     <h4>Summary</h4>
-                    <p>{summary}</p>
+                    <p id = "summary">{summary}</p>
                     <h4>{content}</h4>
                     <ul>{quoteItems}</ul>
                 </div>
