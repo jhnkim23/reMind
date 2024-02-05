@@ -69,4 +69,6 @@ def transcribe(file, filename):
                 count += 1
                 if count > 10:
                     break
+    for i in range(10):
+        print("check")
     return just_name+".txt"

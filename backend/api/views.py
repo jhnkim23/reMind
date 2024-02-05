@@ -92,16 +92,7 @@ class CreateTranscriptView(APIView):
             #input_data = serializer.data.get('input_data')
             
             
-            queryset = Transcript.objects.filter(input_data = input_data)
-            if queryset.exists() == False:
-                #maybe generate a random code to slot into end of filename, to be able to store in same folder
-                #for now
-                #Idk if these are going to be stored long term here, maybe Gman's script deletes these?
-                transcript = Transcript(input_file = input_file, input_data = input_data, output_filename = "audio_output.txt")
-                transcript.save()
-            else:
-                transcript = queryset[0]
-            return Response(TranscriptSerializer(transcript).data, status=status.HTTP_200_OK) 
-        return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({'message': 'Audio processed successfully'}, status=200)
+        return JsonResponse({'error': 'Only POST requests are allowed'}, status=405)
 
         
