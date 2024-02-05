@@ -125,7 +125,6 @@ function Home() {
       // console.log(response.data)
       // console.log(e.target.id)
       
-      
       if (e.target.id === 't') {
         if (transcriptFile) {
             await uploadFile(transcriptFile, "text file");
