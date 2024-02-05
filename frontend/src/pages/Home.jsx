@@ -78,8 +78,8 @@ function Home() {
         });
           console.log(response.data);
           //setLoadingTranscript(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
+          let nodesToSet = response.data["nodes"];
+          let edgesToSet = response.data["nodes"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
           setInfoDict(response.data.infoDict);
       } catch (error) {
@@ -174,6 +174,7 @@ function Home() {
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
+                  {isLoadingAudio && <Loading />}
               </div>
             </div>
           </div>
