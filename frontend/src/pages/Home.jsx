@@ -168,13 +168,13 @@ function Home() {
               <div id="transcript">
                   <input id="t_input" type='file' accept = ".txt" onChange={addTranscript} />
                   <Button id="t" name="transcript file" onClick={handleClick}/>
-                  {isLoadingTranscript && <Loading />}
+                  {/*isLoadingTranscript && <Loading />*/}
               </div>
 
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
-                  {isLoadingAudio && <Loading />}
+                  {(isLoadingAudio || isLoadingTranscript) && <Loading />}
               </div>
             </div>
           </div>
