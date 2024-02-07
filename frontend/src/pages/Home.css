@@ -17,6 +17,10 @@
     flex-grow : 1;
 }
 
+#loading-image {
+    margin: auto;
+}
+
 #aboutIcon {
     position: fixed;
     top: 10px;
