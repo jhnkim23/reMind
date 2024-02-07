@@ -24,7 +24,7 @@ import sys
 import json
 import subprocess
 from .recursive_algo import func
-api = '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'
+api = ''
 from .whisper_transcribe import transcribe
 
 client=OpenAI(api_key = api)
@@ -97,7 +97,7 @@ class CreateTranscriptView(APIView):
             #input_data = serializer.data.get('input_data')
             
             with open(input_data,"r") as file:
-                contents= file.read().decode("utf-8")
+                contents= file.read()
                 print(contents)
                 response = client.chat.completions.create(model="gpt-3.5-turbo-16k",
                                                     messages=[ { "role": "system",

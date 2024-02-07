@@ -1,96 +1,26 @@
 {
-  "title": "Clinical Research Conduct and Management Certificate",
-  "summary": "Dr. Richard Louie, the program director, provides information about the clinical research profession, career options, and how UC Berkeley extension can help launch a career in this field.",
+  "title": "One Flew Over the Cuckoo's Nest",
+  "summary": "The novel explores themes of freedom, hierarchy, and mental illnesses through the story of a group of oppressed patients in a mental institution.",
   "sub-topics": [
     {
-      "title": "Clinical Research Profession",
-      "summary": "Positions in clinical research are in high demand due to the growth in the biopharmaceutical and medical device industries.",
-      "quotes": [
-        "Positions are increasingly in demand as the need grows for professionals to conduct and administer these studies.",
-        "The industry is seeing a need for clinical research Associates to manage domestic and global clinical studies.",
-        "Job opportunities and growth in this profession are positive with an upward trend."
-      ],
-      "sub_topics": []
+      "title": "Big Nurse as a complex character",
+      "summary": "Big Nurse is a powerful and conniving character who controls the patients in the mental institution.",
+      "quotes": ["Big Nurse is such a powerful, complex character that serves as a symbolic head for so many ideas.", "Her title as head of the mental institution dictates her to help the patients, but she controls the patients through such cruel and conniving methods."]
     },
     {
-      "title": "Clinical Research Associate Profession",
-      "summary": "Clinical research associates supervise, monitor, and support the administration and progress of clinical trials.",
-      "quotes": [
-        "Clinical research associates serve as the liaison between the site investigator and the sponsor.",
-        "They ensure compliance with clinical trial protocol and the uniformity of data collection.",
-        "They ensure the research is being performed in a safe and ethical manner."
-      ],
-      "sub_topics": []
+      "title": "The impact of the novel's narrative techniques",
+      "summary": "The clever narrative techniques, including a mute schizophrenic narrator, provide scathing irony and social critique.",
+      "quotes": ["The clever narrative techniques provided through a mute schizophrenic narrator creates a story full of scathing irony and social critique that offers an unreliable, false, but genuine and adulterated truth."]
     },
     {
-      "title": "Salary and Career Advancement",
-      "summary": "Entry-level clinical research associates in the San Francisco Bay Area earn a median salary of $70,000 per year.",
-      "quotes": [
-        "Salary increases with experience and credentialing.",
-        "Clinical research managers earn a median salary of about $119,000 per year.",
-        "Experience and credentialing provide opportunities for advancement."
-      ],
-      "sub_topics": []
+      "title": "Recommendation and relevance of the book",
+      "summary": "The book is emotionally charged, unapologetic, and relevant to discussions on mental health and patient disenfranchisement.",
+      "quotes": ["Despite being difficult to swallow at times, it was one of my favorite reads ever.", "Not many books involve topics such as mental health asylums, patient disenfranchisement, and the dehumanizing combine as directly or as well as Cuckoo's Nest."]
     },
     {
-      "title": "How to Become a Clinical Research Associate",
-      "summary": "Steps to enter the clinical research profession include obtaining a bachelor's degree, developing core knowledge, gaining practical experience, and pursuing credentialing exams.",
-      "quotes": [
-        "Recommended to have a bachelor's degree in a science or technical field.",
-        "Practical hands-on experience can be gained through internships or volunteering.",
-        "Credentialing exams are offered by the Association for Clinical Research Professionals and the Society of Clinical Research Associates."
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "UC Berkeley Extension's Clinical Research Conduct and Management Certificate",
-      "summary": "UC Berkeley Extension offers a certificate program that provides a thorough foundation in clinical research skills and knowledge.",
-      "quotes": [
-        "UC Berkeley Extension is the continuing education arm of UC Berkeley, offering Berkeley quality education.",
-        "The certificate program covers FDA regulations, good clinical practices, and practical procedural guidelines.",
-        "The curriculum consists of four required courses and can be completed in 8 to 12 months."
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "Course Formats and Enrollment",
-      "summary": "Courses are available in online and hybrid formats, and enrollment can be done at any time.",
-      "quotes": [
-        "Hybrid courses combine classroom and online instruction, allowing for in-person interaction.",
-        "Online courses have defined start and end dates with assignments and learning modules.",
-        "Courses can be taken individually or as part of the certificate program."
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "Internship Opportunities and Optional Courses",
-      "summary": "UC Berkeley Extension helps connect students to internship opportunities and offers optional courses to further broaden knowledge.",
-      "quotes": [
-        "Internship opportunities allow for practical work experience and building connections.",
-        "Optional courses include pharmacology, toxicology, biostatistics, and quality and compliance.",
-        "Additional courses can contribute to eligibility for credentialing exams."
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "Graduate Success Stories",
-      "summary": "Recent graduates have secured positions in project management, clinical trials, and clinical science.",
-      "quotes": [
-        "Graduates have found success in the industry and credit the certificate program for their achievements.",
-        "Employers value the certificate from a reputable institution.",
-        "The program provides a strong foundation and knowledge in all facets of clinical operations."
-      ],
-      "sub_topics": []
-    },
-    {
-      "title": "Program Registration and Completion",
-      "summary": "Registration for the program is a one-time fee, and completion requires a grade of C or higher.",
-      "quotes": [
-        "Registration is not required to start taking classes.",
-        "Registration can be done at any time, even after starting courses.",
-        "Completion of the program results in a certificate."
-      ],
-      "sub_topics": []
+      "title": "Introduction of special guests",
+      "summary": "The host introduces Bustin, the head physician of a psychiatric ward, and Head Empty, a sociology professor.",
+      "quotes": ["We are joined in the studio by Bustin, the head physician for a nearby psychiatric ward.", "We also have another special guest today, Head Empty, a sociology professor."]
     }
   ]
 }
