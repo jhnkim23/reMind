@@ -58,8 +58,7 @@ function Home() {
     const [audioFile, setAudioFile] = useState(null);
     const [transcriptFile, setTranscriptFile] = useState(null);
     const [aboutPopUp, setAboutPopUp] = useState(false);
-    const [isLoadingTranscript, setLoadingTranscript] = useState(false);
-    const [isLoadingAudio, setLoadingAudio] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     
     const togglePopup = () => {
       setAboutPopUp(!aboutPopUp);
@@ -68,7 +67,7 @@ function Home() {
     async function uploadFile(file, type) {
       const formData = new FormData();
       formData.append(type, file);
-      setLoadingTranscript(true);
+      setIsLoading(true);
 
       try {
         const response = await axios.post('http://127.0.0.1:8000/api/upload_transcript/', formData, {
@@ -82,6 +81,7 @@ function Home() {
           let edgesToSet = response.data["nodes"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
           setInfoDict(response.data.infoDict);
+          setIsLoading(false);
       } catch (error) {
           console.error(error);
           // Handle error here
@@ -90,7 +90,7 @@ function Home() {
     async function uploadAudio(file, type) {
       const formData = new FormData();
       formData.append(type, file);
-      setLoadingAudio(true);
+      setIsLoading(true);
 
       try {
         const response = await axios.post('http://127.0.0.1:8000/api/create-transcript/', formData, {
@@ -104,6 +104,7 @@ function Home() {
           let edgesToSet = response.data.edges;
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
           setInfoDict(response.data.infoDict);
+          setIsLoading(false);
       } catch (error) {
           console.error(error);
           // Handle error here
@@ -168,13 +169,12 @@ function Home() {
               <div id="transcript">
                   <input id="t_input" type='file' accept = ".txt" onChange={addTranscript} />
                   <Button id="t" name="transcript file" onClick={handleClick}/>
-                  {/*isLoadingTranscript && <Loading />*/}
               </div>
 
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
-                  {(isLoadingAudio || isLoadingTranscript) && <Loading />}
+                  {(isLoading) && <Loading />}
               </div>
             </div>
           </div>
