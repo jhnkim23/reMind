@@ -97,12 +97,13 @@ function Home() {
                 "Content-Type": "multipart/form-data"
             }
         });
-          console.log(response.data);
-          //setLoadingAudio(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
-          onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
-          setInfoDict(response.data.infoDict);
+        let data=JSON.parse(response.data);
+        console.log(data);
+        //setLoadingTranscript(false);
+        let nodesToSet = data["nodes"];
+        let edgesToSet = data["edges"];
+        onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
+        setInfoDict(data["infoDict"]);
       } catch (error) {
           console.error(error);
           // Handle error here
