@@ -115,8 +115,9 @@ class CreateTranscriptView(APIView):
                 file_writer.write(response.choices[0].message.content)
                 file_writer.close()
                 x=json.dumps(func("abc.json"))
-            return JsonResponse(x, status=200,safe=False)
-
+                return JsonResponse(x, status=200,safe=False)
+    
         return JsonResponse({'error': 'Only POST requests are allowed'}, status=405)
+
 
         
