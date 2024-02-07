@@ -30,7 +30,7 @@ import api_key
 
 # Access the API key from the environment variable
 api_key=api_key.OPENAI_API_KEY
-client=openai.Client(api_key='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')
+client=openai.Client(api_key=api_key)
 
 def home(request):
     return HttpResponse("Welcome to the backend!") 
