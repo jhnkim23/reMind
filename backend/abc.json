@@ -1,74 +1,95 @@
 {
-  "title": "Online Information Session on Health Informatics",
+  "title": "Online Information Session: Health Informatics",
   "summary": "UC Berkeley Extension offers a fully online professional program in health informatics. The program prepares students for in-demand positions in the healthcare field.",
   "sub-topics": [
     {
       "title": "Importance of Health Informatics",
-      "summary": "Health informatics is essential for quality patient-centered healthcare and is projected to drive job growth in the healthcare industry.",
+      "summary": "Health informatics is essential for quality patient-centered healthcare delivery. The healthcare industry is projected to add 4 million new jobs by 2026.",
       "quotes": [
-        "Health informatics is essential to the delivery of quality patient-centered health care in the United States and around the world.",
-        "The healthcare industry will continue to drive the nation's employment growth through 2026 by adding around 4 million new jobs.",
-        "The need to address the Triple Aim improve care quality and population health while reducing costs is driving the need for more health informatics professionals."
+        "Health informatics is essential to the delivery of quality patient-centered health care.",
+        "The healthcare industry will continue to drive the nation's employment growth through 2026.",
+        "The growth is projected across healthcare settings, including hospitals and ambulatory care."
       ],
       "sub-topics": [
         {
-          "title": "Role of Electronic Health Record Systems",
-          "summary": "Electronic health record systems track patient care, provide informed choices for healthcare professionals, and support a more efficient delivery system.",
+          "title": "Role of Health Informatics Professionals",
+          "summary": "Health informatics professionals help meet the need for a more patient-centered and efficient healthcare delivery system.",
           "quotes": [
-            "Electronic health records help track patient care and allow health professionals to make the most informed and appropriate choices for their patients.",
-            "Electronic health records are associated with clinical decision support systems and the ability to electronically share information with other providers."
+            "Health informatics professionals put the people, process, and technology together to get the work done.",
+            "Electronic health records help track patient care and allow health professionals to make informed choices.",
+            "Top focus areas for health informatics work include electronic health records, data analytics, and clinical and business intelligence."
           ],
-          "sub-topics": [
-            {
-              "title": "Top Focus Areas for Health Informatics Work",
-              "summary": "Top focus areas for health informatics work include electronic health records, improving quality outcomes through health IT, data analytics, and more.",
-              "quotes": [
-                "Top focus areas for health informatics work included electronic health records, improving quality outcomes through health IT, data analytics, and clinical informatics.",
-                "Hospitals employ a wide range of information and technology leaders to address health information and technology issues."
-              ],
-              "sub-topics": []
-            }
-          ]
+          "sub-topics": []
+        },
+        {
+          "title": "Use of Technology in Healthcare",
+          "summary": "Changes in healthcare reform and increasing healthcare costs have led to increased use of electronic health record systems.",
+          "quotes": [
+            "The need to address the Triple Aim is driving the need for more health informatics professionals.",
+            "Electronic health records help track patient care and allow health professionals to make informed choices.",
+            "Health informatics professionals help healthcare organizations provide better care and operate more efficiently."
+          ],
+          "sub-topics": []
         }
       ]
     },
     {
       "title": "UC Berkeley Extension's Health Informatics Program",
-      "summary": "UC Berkeley Extension offers a fully online health informatics program that prepares students for a wide range of positions in the field.",
+      "summary": "UC Berkeley Extension offers a fully online health informatics program to help students succeed in this growing field.",
       "quotes": [
-        "UC Berkeley Extension is the continuing education department of UC Berkeley and offers more than 65 professional certificates and specialized programs.",
-        "The health informatics certificate program can prepare students for positions such as health informatics specialists, clinical informatics management, and more.",
-        "The program consists of four required courses that can be completed online in as little as three months."
+        "UC Berkeley Extension is the continuing education department of UC Berkeley.",
+        "The program prepares students for a wide range of health informatics positions.",
+        "The program consists of four required courses that can be completed in as little as three months."
       ],
       "sub-topics": [
         {
-          "title": "Required Courses",
-          "summary": "The program consists of four required courses: Introduction to Health Informatics, Health Informatics Applications, Interoperability Standards and Health Information Exchange, and Electronic Health Record Systems.",
+          "title": "Course Overview",
+          "summary": "The program consists of four required courses: Introduction to Health Informatics, Health Management and Technology, Interoperability Standards and Health Information Exchange, and Electronic Health Record Systems.",
           "quotes": [
-            "The four required courses are Introduction to Health Informatics, Health Informatics Applications, Interoperability Standards and Health Information Exchange, and Electronic Health Record Systems.",
-            "The courses can be taken in any order."
+            "Introduction to Health Informatics provides an overview of health information technology.",
+            "Health Management and Technology focuses on technology applications for population health management.",
+            "Interoperability Standards and Health Information Exchange covers the steps needed to achieve interoperability in healthcare.",
+            "Electronic Health Record Systems explores how EHR systems are used in a clinical setting."
           ],
           "sub-topics": []
         },
         {
-          "title": "Course Details",
-          "summary": "Courses are offered online and can be completed at your own pace. Assignments include activities using health informatics applications and real-world projects.",
+          "title": "Course Format and Completion",
+          "summary": "All courses are offered online and can be completed in as little as three months. Students have up to three years to complete the program.",
           "quotes": [
-            "Courses are offered online in an ongoing, continuous enrollment format.",
-            "Assignments include activities using health informatics applications and other real-world projects."
+            "Courses are ongoing continuous enrollment and can be started as soon as enrolled.",
+            "Students progress through each course at their own pace.",
+            "All learning materials are accessible online and assignments are submitted electronically."
           ],
           "sub-topics": []
         },
         {
-          "title": "Cost and Financial Aid",
-          "summary": "The total cost for all four required courses is around $7,800. Financial aid is not available for this program.",
+          "title": "Admission and Cost",
+          "summary": "A bachelor's degree or practical experience in the healthcare system is recommended. The total cost for all required courses is around $7,800.",
           "quotes": [
-            "The total cost for all four required courses is around $7,800.",
-            "Financial aid is not available for this program."
+            "A bachelor's degree or practical experience in the healthcare system is recommended.",
+            "The total cost for all required courses is around $7,800.",
+            "Courses can be paid for one at a time, and students have up to three years to complete the program."
           ],
           "sub-topics": []
         }
       ]
+    },
+    {
+      "title": "Career Opportunities",
+      "summary": "Completing the health informatics program can lead to a wide range of positions in the field.",
+      "quotes": [
+        "The program prepares students for positions such as health informatics specialists, clinical informatics analysts, and EHR project managers.",
+        "Consulting positions in the field are also in demand.",
+        "Health informatics professionals partner with a diverse set of stakeholders to get the work done."
+      ],
+      "sub-topics": []
+    },
+    {
+      "title": "Contact Information",
+      "summary": "For more information or to enroll in the program, contact UC Berkeley Extension.",
+      "quotes": [],
+      "sub-topics": []
     }
   ]
 }
