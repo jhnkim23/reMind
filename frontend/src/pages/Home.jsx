@@ -5,8 +5,9 @@ import 'src/pages/Home.css';
 import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
 import Loading from 'src/components/Loading/Loading'
+import axios from "axios";
+
 import ELK from 'elkjs/lib/elk.bundled.js';
-import axios from 'axios';
 
 const elk = new ELK();
 const elkOptions = {
@@ -77,8 +78,8 @@ function Home() {
         });
           console.log(response.data);
           //setLoadingTranscript(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
+          let nodesToSet = response.data["nodes"];
+          let edgesToSet = response.data["nodes"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
           setInfoDict(response.data.infoDict);
       } catch (error) {
@@ -167,12 +168,13 @@ function Home() {
               <div id="transcript">
                   <input id="t_input" type='file' accept = ".txt" onChange={addTranscript} />
                   <Button id="t" name="transcript file" onClick={handleClick}/>
-                  {isLoadingTranscript && <Loading />}
+                  {/*isLoadingTranscript && <Loading />*/}
               </div>
 
               <div id="audio">
                   <input id="a_input" type='file' accept = ".mp4, .mp3, .wav" onChange={addAudio} />
                   <Button id="a" name="audio/video file" onClick={handleClick}/>
+                  {(isLoadingAudio || isLoadingTranscript) && <Loading />}
               </div>
             </div>
           </div>
