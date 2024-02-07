@@ -47,8 +47,8 @@ def transcribe(file, filename):
             for segment in segments:
                 f.write("%s \n" % (segment.text))
                 count += 1
-                if count > 10:
-                    break
+                #if count > 10:
+                #    break
 
 
             #JUST RUN WHISPER
@@ -67,8 +67,8 @@ def transcribe(file, filename):
             for segment in segments:
                 f.write("%s \n" % (segment.text))
                 count += 1
-                if count > 10:
-                    break
+                #if count > 10:
+                #    break
     for i in range(10):
         print("check")
     return just_name+".txt"

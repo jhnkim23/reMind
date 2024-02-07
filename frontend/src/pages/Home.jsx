@@ -6,7 +6,6 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import AboutPopup from 'src/components/AboutPopup/AboutPopup'
 import Loading from 'src/components/Loading/Loading'
 import axios from "axios";
-
 import ELK from 'elkjs/lib/elk.bundled.js';
 
 const elk = new ELK();
@@ -98,13 +97,13 @@ function Home() {
                 "Content-Type": "multipart/form-data"
             }
         });
-          console.log(response.data);
-          //setLoadingAudio(false);
-          let nodesToSet = response.data.nodes;
-          let edgesToSet = response.data.edges;
-          onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
-          setInfoDict(response.data.infoDict);
-          setIsLoading(false);
+        let data=JSON.parse(response.data);
+        console.log(data);
+        //setLoadingTranscript(false);
+        let nodesToSet = data["nodes"];
+        let edgesToSet = data["edges"];
+        onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
+        setInfoDict(data["infoDict"]);
       } catch (error) {
           console.error(error);
           // Handle error here
