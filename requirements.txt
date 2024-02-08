@@ -1,6 +1,6 @@
 djangorestframework
 django-cors-headers
 Django 
-openai --upgrade
+openai
 faster_whisper
 pydub
