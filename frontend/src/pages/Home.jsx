@@ -69,8 +69,7 @@ function Home() {
       setIsLoading(true);
 
       try {
-        //'http://127.0.0.1:8000/api/upload_transcript/'
-        const response = await axios.post('api/upload_transcript/', formData, {
+        const response = await axios.post('http://127.0.0.1:8000/api/create_transcript/', formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
@@ -94,8 +93,7 @@ function Home() {
       setIsLoading(true);
 
       try {
-        //'http://127.0.0.1:8000/api/create_transcript/'
-        const response = await axios.post('api/create-transcript/', formData, {
+        const response = await axios.post('http://127.0.0.1:8000/api/create_transcript/', formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
