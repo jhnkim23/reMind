@@ -4,3 +4,4 @@ Django
 openai
 faster_whisper
 pydub
+gunicorn==<version>
