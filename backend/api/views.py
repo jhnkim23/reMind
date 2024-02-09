@@ -23,7 +23,7 @@ from openai import OpenAI
 import sys
 import json
 import subprocess
-import api_key
+#import api_key
 from .recursive_algo import func
 from .whisper_transcribe import transcribe
 
