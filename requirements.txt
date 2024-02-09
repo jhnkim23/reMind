@@ -1,2 +1,6 @@
 djangorestframework
 django-cors-headers
+Django 
+openai
+faster_whisper
+pydub

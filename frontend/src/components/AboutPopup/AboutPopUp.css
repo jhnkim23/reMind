@@ -26,15 +26,6 @@
     cursor: pointer;
   }
 
-<<<<<<< HEAD
-  #about-title {
-    text-align: center;
-  }
-
-  #instructions-title {
-    text-align: center;
-=======
   #title {
-    align: center;
->>>>>>> gautham6
+    text-align: center;
   }
