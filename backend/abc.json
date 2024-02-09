@@ -1,26 +1,32 @@
 {
   "title": "One Flew Over the Cuckoo's Nest",
-  "summary": "The novel explores themes of freedom, hierarchy, and mental illnesses through the story of a group of oppressed patients in a mental institution.",
+  "summary": "The novel explores themes of freedom, hierarchy, and mental illnesses through the story of a group of patients in a mental institution.",
   "sub-topics": [
     {
-      "title": "Big Nurse as a complex character",
-      "summary": "Big Nurse is a powerful and conniving character who controls the patients in the mental institution.",
-      "quotes": ["Big Nurse is such a powerful, complex character that serves as a symbolic head for so many ideas.", "Her title as head of the mental institution dictates her to help the patients, but she controls the patients through such cruel and conniving methods."]
+      "title": "Plot Summary",
+      "summary": "The story follows a group of patients oppressed by a mental institution, and the arrival of a new patient named McMurphy who challenges the oppression.",
+      "quotes": [
+        "This story follows a group of patients oppressed by a mental institution.",
+        "McMurphy challenges the oppression of the institution by outwardly showing his sexuality and rallying the other patients to regain their humanity."
+      ],
+      "sub-topics": []
     },
     {
-      "title": "The impact of the novel's narrative techniques",
-      "summary": "The clever narrative techniques, including a mute schizophrenic narrator, provide scathing irony and social critique.",
-      "quotes": ["The clever narrative techniques provided through a mute schizophrenic narrator creates a story full of scathing irony and social critique that offers an unreliable, false, but genuine and adulterated truth."]
+      "title": "Themes",
+      "summary": "The novel explores themes of freedom, hierarchy, and mental illnesses that are still relevant in today's political climate.",
+      "quotes": [
+        "We believe this would be interesting to talk about as it deals with freedom, hierarchy and mental illnesses, topics we still discuss to this day in our political climate."
+      ],
+      "sub-topics": []
     },
     {
-      "title": "Recommendation and relevance of the book",
-      "summary": "The book is emotionally charged, unapologetic, and relevant to discussions on mental health and patient disenfranchisement.",
-      "quotes": ["Despite being difficult to swallow at times, it was one of my favorite reads ever.", "Not many books involve topics such as mental health asylums, patient disenfranchisement, and the dehumanizing combine as directly or as well as Cuckoo's Nest."]
-    },
-    {
-      "title": "Introduction of special guests",
-      "summary": "The host introduces Bustin, the head physician of a psychiatric ward, and Head Empty, a sociology professor.",
-      "quotes": ["We are joined in the studio by Bustin, the head physician for a nearby psychiatric ward.", "We also have another special guest today, Head Empty, a sociology professor."]
+      "title": "Character Analysis",
+      "summary": "Big Nurse is a powerful and complex character who symbolizes control and cruelty in the mental institution.",
+      "quotes": [
+        "Big Nurse is such a powerful, complex character that serves as a symbolic head for so many ideas.",
+        "Her title as head of the mental institution dictates her to help the patients, but she controls the patients through such cruel and conniving methods."
+      ],
+      "sub-topics": []
     }
   ]
 }

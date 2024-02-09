@@ -21,9 +21,9 @@ from django.views.decorators.csrf import csrf_exempt
 import openai
 from openai import OpenAI
 import sys
+from .api_key import OPENAI_API_KEY 
 import json
 import subprocess
-import api_key
 from .recursive_algo import func
 from .whisper_transcribe import transcribe
 
