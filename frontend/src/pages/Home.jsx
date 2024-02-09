@@ -70,8 +70,9 @@ function Home() {
 
       try {
         //'http://127.0.0.1:8000/api/upload_transcript/'
-        const response = await axios.post('https://0.0.0.0:10000/api/upload_transcript/', formData, {
+        const response = await axios.post('http://0.0.0.0:10000/api/upload_transcript/', formData, {
             headers: {
+                "Accept":"application/json, text/plain, /",
                 "Content-Type": "multipart/form-data"
             }
         });
@@ -95,9 +96,10 @@ function Home() {
 
       try {
         //'http://127.0.0.1:8000/api/create_transcript/'
-        const response = await axios.post('https://0.0.0.0:10000/api/create-transcript/', formData, {
+        const response = await axios.post('http://0.0.0.0:10000/api/create-transcript/', formData, {
             headers: {
-                "Content-Type": "multipart/form-data"
+              "Accept":"application/json, text/plain, /",
+              "Content-Type": "multipart/form-data"
             }
         });
         let data=JSON.parse(response.data);
