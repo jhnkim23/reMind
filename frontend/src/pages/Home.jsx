@@ -74,12 +74,13 @@ function Home() {
                 "Content-Type": "multipart/form-data"
             }
         });
-          console.log(response.data);
+          let data=JSON.parse(response.data);
+          console.log(data);
           //setLoadingTranscript(false);
-          let nodesToSet = response.data["nodes"];
-          let edgesToSet = response.data["nodes"];
+          let nodesToSet = data["nodes"];
+          let edgesToSet = data["edges"];
           onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
-          setInfoDict(response.data.infoDict);
+          setInfoDict(data["infoDict"]);
           setIsLoading(false);
       } catch (error) {
           console.error(error);
@@ -104,6 +105,8 @@ function Home() {
         let edgesToSet = data["edges"];
         onLayout({ direction: 'DOWN', nodesToSet, edgesToSet});
         setInfoDict(data["infoDict"]);
+        setIsLoading(false);
+
       } catch (error) {
           console.error(error);
           // Handle error here
