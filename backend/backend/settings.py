@@ -27,7 +27,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEBUG = True
 
 #ALLOWED_HOSTS = ['*'] #'0.0.0.0','127.0.0.1']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'remind-ai-37yk.onrender.com', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'remind-ai-37yk.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/']
 
